@@ -26,6 +26,7 @@ public class TokenService {
      */
     @Value("${app.jwt.expiration}")
     private String jwtExpiration;
+
     @Value("${app.jwt.secret}")
     private String jwtSecret;
 
@@ -49,6 +50,7 @@ public class TokenService {
                 .setExpiration(terminoToken)
                 .signWith(SignatureAlgorithm.HS256, jwtSecret) // Assina o JWT com a Secret do passo 9
                 .compact();
+
         return TokenDto.builder()
                 .token(jwt)
                 .tipo("Bearer")

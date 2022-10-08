@@ -38,6 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /*
      * Step 4 - Configurar autorizações
+     * Sobrecrever o método configure
      * ... configure(HttpSecurity http) ...
      */
     @Override
@@ -76,6 +77,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
-
 
 }
